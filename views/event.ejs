@@ -1,0 +1,205 @@
+<%- include('partials/header') %> 
+<%- include('partials/sidebar') %> 
+<section id="event" class="container-fluid">
+    <section id="sports" class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="heading-section mb-5 pb-md-4">Sports Events</h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="featured-carousel owl-carousel">
+                        <% events.forEach(event => { %>
+                            <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                            <% if(event.type === 'sports'){ %>
+                                <div class="item">
+                                    <div class="blog-entry">
+                          <a href="#" class="block-20 d-flex align-items-start" style="background-image: url('<%= event.img_location[0] %>'); height: 200px;">
+                            <div class="meta-date text-center p-2">
+                              <span class="day"><%= event.date[0] %></span>
+                              <span class="mos"><%= month[parseInt(event.date[1])-1] %></span>
+                              <span class="yr"><%= event.date[2] %> </span>
+                            </div>
+                          </a>
+                          <div class="text border border-top-0 p-3">
+                            <h3 class="heading"><a href="#"><%= event.name %></a></h3>
+                            <p style="font-size: 14px;"><%= event.description.substring(0, 72) + "..." %> </p>
+                            <div class="d-flex align-items-center mt-2">
+                                <p class="mb-0"><a href="./events/<%=event._id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                                <p style="font-size: 14px;" class="ml-auto meta2 mb-0">
+                                    <!-- <a href="#" class="mr-2">Admin</a>
+                                    <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a> -->
+                                    <%= event.organiser %> 
+                                </p>
+                            </div>
+                          </div>
+                        </div>
+                                </div>
+                            <% } %>
+                        <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="ftco-section pt-0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <h2 class="heading-section mb-5 pb-md-4">Techincal Events</h2>
+              </div>
+              <div class="col-md-12">
+                  <div class="featured-carousel owl-carousel">
+                      <% events.forEach(event => { %>
+                        <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                          <% if(event.type === 'tech'){ %>
+                              <div class="item">
+                                  <div class="blog-entry">
+                        <a href="#" class="block-20 d-flex align-items-start" style="background-image: url('<%= event.img_location[0] %>'); height: 200px;">
+                          <div class="meta-date text-center p-2">
+                            <span class="day"><%= event.date[0] %></span>
+                            <span class="mos"><%= month[parseInt(event.date[1])-1] %></span>
+                            <span class="yr"><%= event.date[2] %> </span>
+                          </div>
+                        </a>
+                        <div class="text border border-top-0 p-3">
+                          <h3 class="heading"><a href="#"><%= event.name %></a></h3>
+                          <p style="font-size: 14px;"><%= event.description.substring(0, 72) + "..." %> </p>
+                          <div class="d-flex align-items-center mt-2">
+                              <p class="mb-0"><a href="./events/<%=event._id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                              <p style="font-size: 14px;" class="ml-auto meta2 mb-0">
+                                  <!-- <a href="#" class="mr-2">Admin</a>
+                                    <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a> -->
+                                    <%= event.organiser %> 
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                              </div>
+                          <% } %>
+                      <% }) %>
+          </div>
+      </div>
+  </section>
+
+  <section id="cultural" class="ftco-section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="heading-section mb-5 pb-md-4">Cultural Events</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="featured-carousel owl-carousel">
+                    <% events.forEach(event => { %>
+                        <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                        <% if(event.type === 'cultural'){ %>
+                            <div class="item">
+                                <div class="blog-entry">
+                      <a href="#" class="block-20 d-flex align-items-start" style="background-image: url('<%= event.img_location[0] %>'); height: 200px;">
+                        <div class="meta-date text-center p-2">
+                          <span class="day"><%= event.date[0] %></span>
+                          <span class="mos"><%= month[parseInt(event.date[1])-1] %></span>
+                          <span class="yr"><%= event.date[2] %> </span>
+                        </div>
+                      </a>
+                      <div class="text border border-top-0 p-3">
+                        <h3 class="heading"><a href="#"><%= event.name %></a></h3>
+                        <p style="font-size: 14px;"><%= event.description.substring(0, 72) + "..." %> </p>
+                        <div class="d-flex align-items-center mt-2">
+                            <p class="mb-0"><a href="./events/<%=event._id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                            <p style="font-size: 14px;" class="ml-auto meta2 mb-0">
+                                <!-- <a href="#" class="mr-2">Admin</a>
+                                    <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a> -->
+                                    <%= event.organiser %> 
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                            </div>
+                        <% } %>
+                    <% }) %>
+        </div>
+    </div>
+</section>
+
+<section id="literary" class="ftco-section pt-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <h2 class="heading-section mb-5 pb-md-4">Literary Events</h2>
+          </div>
+          <div class="col-md-12">
+              <div class="featured-carousel owl-carousel">
+                  <% events.forEach(event => { %>
+                    <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                      <% if(event.type === 'literary'){ %>
+                          <div class="item">
+                              <div class="blog-entry">
+                    <a href="#" class="block-20 d-flex align-items-start" style="background-image: url('<%= event.img_location[0] %>'); height: 200px;">
+                      <div class="meta-date text-center p-2">
+                        <span class="day"><%= event.date[0] %></span>
+                        <span class="mos"><%= month[parseInt(event.date[1])-1] %></span>
+                        <span class="yr"><%= event.date[2] %> </span>
+                      </div>
+                    </a>
+                    <div class="text border border-top-0 p-3">
+                      <h3 class="heading"><a href="#"><%= event.name %></a></h3>
+                      <p style="font-size: 14px;"><%= event.description.substring(0, 72) + "..." %> </p>
+                      <div class="d-flex align-items-center mt-2">
+                          <p class="mb-0"><a href="./events/<%=event._id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                          <p style="font-size: 14px;" class="ml-auto meta2 mb-0">
+                              <!-- <a href="#" class="mr-2">Admin</a>
+                                    <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a> -->
+                                    <%= event.organiser %> 
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+                          </div>
+                      <% } %>
+                  <% }) %>
+      </div>
+  </div>
+</section>
+
+<section id="social" class="ftco-section pt-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <h2 class="heading-section mb-5 pb-md-4">Social Events</h2>
+          </div>
+          <div class="col-md-12">
+              <div class="featured-carousel owl-carousel">
+                  <% events.forEach(event => { %>
+                    <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                      <% if(event.type === 'social'){ %>
+                          <div class="item">
+                              <div class="blog-entry">
+                    <a href="#" class="block-20 d-flex align-items-start" style="background-image: url('<%= event.img_location[0] %>'); height: 200px;">
+                      <div class="meta-date text-center p-2">
+                        <span class="day"><%= event.date[0] %></span>
+                        <span class="mos"><%= month[parseInt(event.date[1])-1] %></span>
+                        <span class="yr"><%= event.date[2] %> </span>
+                      </div>
+                    </a>
+                    <div class="text border border-top-0 p-3">
+                      <h3 class="heading"><a href="#"><%= event.name %></a></h3>
+                      <p style="font-size: 14px;"><%= event.description.substring(0, 72) + "..." %> </p>
+                      <div class="d-flex align-items-center mt-2">
+                          <p class="mb-0"><a href="./events/<%=event._id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                          <p style="font-size: 14px;" class="ml-auto meta2 mb-0">
+                              <!-- <a href="#" class="mr-2">Admin</a>
+                                    <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a> -->
+                                    <%= event.organiser %> 
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+                          </div>
+                      <% } %>
+                  <% }) %>
+      </div>
+  </div>
+</section>
+</section>
+
+<%- include('partials/footer') %> 

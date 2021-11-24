@@ -1,0 +1,56 @@
+<%- include('partials/header') %> 
+<div class="backToAdmin" style="padding-left: 20%;padding-top: 2%;color: 1e1e1e;">
+    <a href="/admin" style="margin-left: 5px;"><%="<< "%>Admin Page</a>
+</div>
+<div id="login" class="container-fluid row" >
+    <div class="col-md-6 col-10 mx-auto">
+        <h1 style="text-align: center;">Awards and Publications</h1>
+        <form action="/admin/create_intP" method="POST">
+            <div class="form-group">
+                <label for="Student name">Student/Society Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Student Name" required>
+            </div>
+            <div class="form-group">
+                <label for="Student roll no">Student Roll No.</label>
+                <input type="text" name="roll" class="form-control" id="roll" placeholder="Student Roll No.">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="win" id="choice1" value="Award">
+                <label class="form-check-label" for="choice1">
+                  Award
+                </label>
+            </div>
+            <!-- <div class="form-group reveal-if-active">
+                <label for="Event name">Event Name</label>
+                <input type="text" name="name" class="form-control require-if-active" data-require-pair="#choice1" id="name" placeholder="Event Name">
+            </div> -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="win" id="choice2" value="Publication">
+                <label class="form-check-label" for="choice2">
+                  Publication
+                </label>
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="Student place">Position</label>
+                <input type="text" name="place" class="form-control" id="place" placeholder="Position" aria-describedby="placeRank" >
+                <small id="placeRank" class="form-text text-muted">If Award is chosen</small>
+            </div>
+            <!-- <div class="form-group reveal-if-active">
+                <label for="Event name">Conference Name</label>
+                <input type="text" name="name" class="form-control require-if-active" data-require-pair="#choice2" id="name" placeholder="Conference Name">
+            </div> -->
+            <div class="form-group mt-3">
+                <label for="Event/Conference name">Event/Conference Name</label>
+                <input type="text" name="event_conf" class="form-control" id="event_conf" placeholder="Event/Conference Name" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="description">Description</label>
+                <textarea name="description" class="form-control" rows="6" id="description" placeholder="Description" required style="overflow-y: auto;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 

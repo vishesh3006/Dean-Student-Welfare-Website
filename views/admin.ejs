@@ -1,0 +1,25 @@
+<%- include('partials/header') %> 
+
+<div class="container-fluid" id="admin" style="padding-left: 10%; padding-right: 10%;">
+    <% if(messages.success){ %>
+        <div class="alert alert-success" role="alert">
+            <strong><%= messages.success %></strong>
+        </div>
+    <% } %> 
+    <div class="row">
+        <div class="col-md-6 my-2">
+            <button onclick="location.href = './admin/create_event'" class="btn btn-danger btn-block py-2">Add New Event</button>
+        </div>
+        <div class="col-md-6 my-2">
+            <button onclick="location.href = './admin/create_notice'" class="btn btn-danger btn-block py-2">Add New Notice</button>
+        </div>
+        <div class="col-md-6 my-2">
+            <button onclick="location.href = './admin/create_intP'" class="btn btn-danger btn-block py-2">Add Awards or Publications</button>
+        </div>
+        <div class="col-md-6 my-2">
+            <button onclick="location.href = './admin/create_society'" class="btn btn-danger btn-block py-2">Add New Society</button>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 

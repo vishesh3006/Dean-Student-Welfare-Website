@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+<!-- <div class="crossfade">
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+  </div> -->
+<div class="col-12 px-6 container-fluid" >
+    <ol class="breadcrumb px-auto py-auto" style="text-align: center; background-color: transparent;">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/events">Events</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= event.name %> </li>
+    </ol>
+</div>
+<section class="container-fluid" id="eventPage" >
+    <!-- <div class="row" style="margin: 0%;"> -->
+        <div class="col-12 pb-4" style="text-align: center;">
+            <h1 style="color: #1e1e1e;">
+                <%= event.name %> 
+            </h1>
+        </div>
+        <div class="" style="padding-left: 2%; width: 600px; height: 320px; float: left; margin-right: 15px; margin-bottom: 10px;">
+            <div id="carousel-fade" class="carousel carousel-fade" data-ride="carousel" data-interval="4000">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-fade" data-slide-to="0" class="active"></li>
+                    <% for(var i=0; i<event.img_location.length-1; i++){ %>
+                        <li data-target="#carousel-fade" data-slide-to="<%= i+1 %>"></li>
+                    <% } %> 
+                    
+                </ol>
+            
+                <div class="carousel-inner embed-responsive embed-responsive-16by9" role="listbox">
+                    <div class="carousel-item embed-responsive-item active">
+                        <img src="<%= event.img_location[0] %> " alt="First slide image" class="w-100 h-100">
+                    </div>
+                    <% for(var i=0; i<event.img_location.length-1; i++){ %>
+                        <div class="carousel-item embed-responsive-item">
+                            <img src="<%= event.img_location[i+1] %> " alt="<%= i+1 %>th  slide image" class="w-100 h-100">
+                        </div>
+                    <% } %> 
+                  
+                </div>
+            
+                <!-- <a class="carousel-control-prev" href="#carousel-fade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-fade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a> -->
+            </div>
+            
+        </div>
+        <!-- <div class="col-lg-6 col-md-5 col-10 mx-auto mt-4 pr-3" style="text-align: justify;"> -->
+            <p style="white-space: pre-line; text-align: justify; padding-left: 2%; padding-right: 3%;"><%= event.description %> </p>
+
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %> 

@@ -1,0 +1,252 @@
+<%- include("partials/header") %>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div class="container-fluid">
+    <div class="home">
+        <img class="home_img" src="/img/home_img.jpg" alt="home_img">
+        <span class="main_heading">
+            Student Welfare
+            <div style="width: 10rem;border-bottom: 4px solid #CF102D;height: 0px;"></div>
+        </span>
+    </div>
+    
+    <section id="home-cont" style="background-color: #fff;">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6" style="padding-left: 1%; padding-right: 1%; margin:0%;margin-bottom: 3px;">
+                <div class="card" style="background-color: transparent;">
+                  <div class="card-header" style="background-color: #be3333; color: white;">
+                    <h4>Events</h4>
+                  </div>
+                  <div class="card-body" style="background-color: transparent;">
+                    <marquee align="middle" style="text-align:left;height: 50vmin;position: relative;" direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                      <div class="events">
+                        <ul class="list-group list-group-flush">
+                          <% events.forEach(event => { %>
+                            <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                            <li class="list-group-item" style="background-color: transparent;">
+                              <a href="./events/<%= event._id %> ">
+                                <div class="row">
+                                  <div class="col-3 card" style="padding:0%; display: inline-block;background-color: #CF102D;color: #fff;">
+                                    <div class="card-body" style="text-align: center; padding:0%; color: #fff;">
+                                      <h4 style="font-size: 2rem;"><%= event.date[0] %> </h4>
+                                      <p style="font-size: 1rem;"><%= month[parseInt(event.date[1])-1]+','+event.date[2] %></p>
+                                    </div>
+                                  </div>
+                                  <div class="col-9 align-self-center" style="display: inline-block;">
+                                    <p style="font-size: 1.1rem; color: black;"><%= event.name %></p>
+                                  </div>
+                                </div>
+                              </a>
+                            </li>
+                          <% }) %> 
+                        </ul>
+                      </div>
+                    </marquee>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end mt-1">
+                  <a href="/events" class="btn btn-dark">Event Archives</a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6" style="padding-left: 1%; padding-right: 1%; margin:0%;">
+              <div class="card" style="background-color: transparent;">
+                <div class="card-header" style="background-color: #be3333; color: white;">
+                  <h4>Notices</h4>
+                </div>
+                <div class="card-body" style="background-color: transparent;">
+                  <marquee align="middle" style="text-align:left;height: 50vmin;position: relative;" direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                    <div class="events">
+                      <ul class="list-group list-group-flush">
+                        <% notices.forEach(notice => { %>
+                          <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                          <li class="list-group-item" style="background-color: transparent;">
+                            <a href="./notices/<%= notice._id %> " target="_blank">
+                              <div class="row">
+                                <div class="col-3 card" style="padding:0%; display: inline-block;background-color: #CF102D;color: #fff;">
+                                  <div class="card-body" style="text-align: center; padding:0%">
+                                    <h4 style="font-size: 2rem;"><%= notice.date[0] %> </h4>
+                                    <p style="font-size: 1rem;"><%= month[parseInt(notice.date[1]-1)]+','+notice.date[2] %></p>
+                                  </div>
+                                </div>
+                                <div class="col-9 align-self-center" style="display: inline-block;">
+                                  <p style="font-size: 1.1rem; color: black;"><%= notice.name %></p>
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+                        <% }) %> 
+                      </ul>
+                    </div>
+                  </marquee>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end mt-1">
+                <a href="/notices" class="btn btn-dark">Notice Archives</a>
+              </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="activities">
+      <div class="row">
+        <div class="col-lg-3 col-md-6" style="margin-top: 8px;padding: 0;">
+          <div class="content">
+            <a href="#home-cont" target="_blank">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="/img/student_activities.jpg">
+              <div class="content-details fadeIn-bottom">
+                <h3 class="content-title">Student Activities</h3>
+                <p class="content-text">lorem ipas</p>
+              </div>
+              <div style="text-align: center;">
+                <span class="prev-content" style="background-color: rgba(80, 80, 80, 0.7);">Student Activities</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" style="margin-top: 8px;padding: 0;">
+          <div class="content">
+            <a href="/community/sportsandgame" target="_self">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="/img/Sports&Games.jpg">
+              <div class="content-details fadeIn-bottom">
+                <h3 class="content-title">Sports and Games</h3>
+                <p class="content-text">lorem ipas</p>
+              </div>
+              <div style="text-align: center;">
+                <span class="prev-content" style="background-color: rgba(80, 80, 80, 0.7);">Sports and Games</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" style="margin-top: 8px;padding: 0;">
+          <div class="content">
+            <a href="#home-cont" target="_blank">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="/img/DTU_IIF.jpg">
+              <div class="content-details fadeIn-bottom">
+                <h3 class="content-title">DTU IIF</h3>
+                <p class="content-text">lorem ipas</p>
+              </div>
+              <div style="text-align: center;">
+                <span class="prev-content" style="background-color: rgba(80, 80, 80, 0.7);">DTU IIF</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" style="margin-top: 8px;padding: 0;">
+          <div class="content">
+            <a href="https://intaffairs.dtu.ac.in/" target="_blank">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="/img/int_affairs.jpg">
+              <div class="content-details fadeIn-bottom">
+                <h3 class="content-title">International Affairs</h3>
+                <p class="content-text">lorem ipas</p>
+              </div>
+              <div style="text-align: center;">
+                <span class="prev-content" style="background-color: rgba(80, 80, 80, 0.7);">International Affairs</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="row">
+        <div class="gallery col-lg-6">
+          <div class="lightbox-gallery">
+            <div class="container">
+              <div class="intro">
+                <h4 class="text-center">Gallery</h4>
+              </div>
+              <div class="row photos">
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/badminton.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/badminton.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/football.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/football.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/basket.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/basket.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/cricket.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/cricket.jpg" alt="">
+                  </a>
+                </div>
+    
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/badminton.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/badminton.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/football.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/football.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/basket.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/basket.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-6 col-md-4">
+                  <a href="/img/cricket.jpg" data-lightbox="photos">
+                    <img class="img-fluid" src="/img/cricket.jpg" alt="">
+                  </a>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 pt-3 mx-auto px-5" style="padding-left: 1%; padding-right: 1%; margin:0%;">
+          <div class="card" style="background-color: transparent; height: 90%;">
+            <div class="card-header" style="background-color: #be3333; color: white;">
+              <h4>Awards and Publications</h4>
+            </div>
+            <div class="card-body" style="background-color: transparent;">
+              <marquee align="middle" style="text-align:left;height: 50vmin;position: relative;" direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                <div class="events">
+                  <ul class="list-group list-group-flush">
+                    <% awards.forEach(award => { %>
+                      <li class="list-group-item" style="background-color: transparent;">
+                        <a href="./awards/<%= award._id %> ">
+                          <div class="row">
+                            <div class="col-10 mx-auto align-self-center" style="display: inline-block;">
+                              <% if(award.type === 'award'){ %>
+                                <p style="font-size: 1rem; color: black;"><%= award.name %> came <%= award.place %> in <%= award.event_name %>  </p>
+                              <% } else{ %>
+                                <p style="font-size: 1rem; color: black;"><%= award.name %> published the paper at <%= award.event_name %> </p>
+                              <% } %>
+                              <p style="font-size: 1rem; color: black;"><%= award.name %></p>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    <% }) %> 
+                  </ul>
+                </div>
+              </marquee>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-1">
+            <a href="/awards" class="btn btn-dark">Awards Archives</a>
+          </div>
+      </div>
+      </div>
+    </section>
+</div>
+<%- include("partials/footer") %>  

@@ -1,0 +1,26 @@
+<%- include('partials/header') %> 
+
+<div id="login" class="container-fluid row" >
+    <div class="col-6 mx-auto">
+        <h1 style="text-align: center; color: black;">Login</h1>
+        <% if (messages.error) { %>
+            <div class="py-1" style="text-align: center; color: red;">
+                <p><%= messages.error %></p>
+            </div>
+        <% } %>
+        <form action="/login" method="POST">
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted">Admin Email</small>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #007bff;">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 

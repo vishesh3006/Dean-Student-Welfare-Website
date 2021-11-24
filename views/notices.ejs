@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<section id="notices" class="container-fluid">
+    <div class="row" style="margin: 0%;">
+        <div class="col-12" style="text-align: center;">
+            <h1 style="color: black;">Notices</h1>
+        </div>
+        <div class="col-lg-8 col-md-9 col-10 mx-auto mt-5">
+            <ul class="list-group list-group-flush">
+                <% notices.forEach(notice => { %>
+                    <% const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] %>
+                    <li class="list-group-item" style="border-bottom: 2px solid rgba(0,0,0,0.125)">
+                        <a href="/notices/<%= notice._id %> " target="_blank" style="display: block;"><%= notice.name %></a>
+                        <span><%= notice.date[0]%> <%= month[parseInt(notice.date[1])-1] %> <%= notice.date[2] %> </span>
+                        <span style="float: right;">
+                            <a href="./brochure_21.pdf" download="<%= notice.name %> " style="font-size: 0.8rem;">Download notice</a>
+                        </span>
+                    </li>
+                <% }) %> 
+            </ul>
+        </div>
+      </div>
+</section>
+
+<%- include('partials/footer') %> 

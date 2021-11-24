@@ -1,0 +1,45 @@
+<%- include("partials/header") %>
+<div class="page">
+<%- include("partials/sidebar") %>
+<section id="society">
+
+    <div class="row">
+        <div class="col-12 py-4" style="text-align: center;">
+            <h1>Technical Council</h1>
+            <img src="/img/cultural.png" alt="" style="width: 100%; object-fit: cover;">
+        </div>
+        <!-- <div style="text-align: center;"> -->
+        <div class="col-12" style="text-align: center; margin-top: 2%;">
+            <h1>Societies</h1>
+        </div>
+        <% societies.forEach(society => { %>
+            <div class="col-lg-4 col-md-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <a href="<%= society.link %>">
+                                <div class="card society">
+                                    <div class="card-horizontal">
+                                        <div class="img-square-wrapper">
+                                            <img class="" src="<%= society.logo %> " alt="Card image cap">
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title"><%= society.name %></h4>
+                                            <p class="card-text">Faculty: <%= society.faculty %></p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div> -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        <% }) %> 
+        <!-- </div> -->
+    </div>
+</section>
+</div>
+<%- include("partials/footer") %> 
