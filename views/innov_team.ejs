@@ -4,51 +4,37 @@
 <section id="society">
 
     <div class="row">
-        <div class="col-md-10 col-12 py-4 mx-auto" style="text-align: center;">
-            <h1>UGV</h1>
-            <img src="/img/nss.jpg" alt="nss" style="width: 100%;max-height: 600px; object-fit: cover;">
-        </div>
-            <div class="col-lg-4 col-md-6 col-10 mx-auto my-2">
-               <img src="/img/nss_img1.png" alt="" style="width: 100%; max-height: 270px; object-fit: cover;">
-            </div>
-            <div class="col-lg-4 col-md-6 col-10 mx-auto my-2">
-                <img src="/img/nss_img2.png" alt="" style="width: 100%;max-height: 270px; object-fit: cover;">
-            </div>
-            <div class="col-lg-4 col-md-6 col-10 mx-auto my-2">
-                <img src="/img/nss_img3.png" alt="" style="width: 100%; max-height: 270px; object-fit: cover;">
-            </div>
-            <p class="col-md-10 col-12 mx-auto py-4" style="font-size: 1.2rem; text-align: center;">Unmanned Ground Vehicles is a legacy tech team of DTU led by the most passionate undergraduate engineers across various disciplines. We incorporate cutting-edge technology from the fields of Artificial Intelligence, Sensor Fusion, SLAM, etc., to build autonomous vehicles of the future. Our project is to build prototypes vehicles, driven by extensive research and innovation. We are currently 9th overall and 5th in cybersecurity at Intelligent Ground Vehicle Competition 2019 held at Oakland University, USA. We are aiming for the top spot at the next IGVC Competition. Through these projects, we aim to demystify these new technologies and make them easily available for the masses.</p>
-        <!-- <div style="text-align: center;"> -->
-        <div class="col-md-10 col-12 py-4 mx-auto" style="text-align: center;">
-            <h1>NCC DTU</h1>
-            <img src="/img/ncc_img.jpeg" alt="ncc" style="width: 100%; max-height: 600px; object-fit: cover;">
-        </div>
-
-        <div class="mx-auto row" style="text-align: center;">
-            <div class="col-lg-4 col-md-6 col-10 mx-auto">
-                <video width="100%" controls height="240" muted>
-                    <source src="/img/ncc_vid1.mp4" type="video/mp4">
-                    <source src="/img/ncc_vid1.mp4" type="video/ogg">
-                  Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="col-lg-4 col-md-6 col-10 mx-auto">
-                <video width="100%" controls height="240" muted>
-                    <source src="/img/ncc_vid2.mp4" type="video/mp4">
-                    <source src="/img/ncc_vid2.mp4" type="video/ogg">
-                  Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="col-lg-4 col-md-6 col-10 mx-auto">
-                <video width="100%" controls height="240" muted>
-                    <source src="/img/ncc_vid3.mp4" type="video/mp4">
-                    <source src="/img/ncc_vid3.mp4" type="video/ogg">
-                  Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
         
-        
+        <div class="col-12" style="text-align: center; margin-top: 2%;">
+            <h1>Innovation Teams</h1>
+        </div>
+        <% societies.forEach(society => { %>
+            <div class="col-lg-4 col-md-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <a href="<%= society.link %>">
+                                <div class="card society">
+                                    <div class="card-horizontal">
+                                        <div class="img-square-wrapper">
+                                            <img class="" src="<%= society.logo %> " alt="Card image cap">
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title"><%= society.name %></h4>
+                                            <p class="card-text">Faculty: <%= society.faculty %></p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div> -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        <% }) %> 
+        <!-- </div> -->
     </div>
 </section>
 </div>

@@ -90,6 +90,10 @@ app.get("/community/sportsandgame", async (req, res) => {
     res.render("sports", {events: events})
 })
 
+app.get("/community", (req, res) => {
+    res.render("student_activities")
+})
+
 app.get("/community/tcr", (req, res) => {
     res.render("tech_council", {
         societies: tech_council
@@ -112,6 +116,9 @@ app.get("/community/scr", (req, res) => {
     res.render("social_societies")
 })
 
+app.get("/community/i_t", (req, res) => {
+    res.render("innov_team", {societies: innovative_team})
+})
 app.get("/events", async (req, res) => {
     const events = await Event.find({})
     events.sort(sortByDate)
