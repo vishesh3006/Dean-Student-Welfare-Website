@@ -9,6 +9,10 @@ import flash from "express-flash"
 import session from "express-session"
 // import methodOverride from "method-override"
 import tech_council from './data/tech_council_data.js'
+import social_society from "./data/social_society_data.js";
+import literary_council from "./data/literary_council_data.js";
+import innovative_team from "./data/innovative_team_data.js";
+import cultural_council from "./data/cultural_council_data.js";
 import initializePassport from "./passport-config.js"
 import mongoose from "mongoose"
 import upload from "./S3upload.js"
@@ -81,8 +85,9 @@ app.get("/about-us/brochure", (req, res) => {
     res.render("brochure")
 })
 
-app.get("/community/sportsandgame", (req, res) => {
-    res.render("sports")
+app.get("/community/sportsandgame", async (req, res) => {
+    const events = await Event.find({})
+    res.render("sports", {events: events})
 })
 
 app.get("/community/tcr", (req, res) => {
@@ -93,13 +98,13 @@ app.get("/community/tcr", (req, res) => {
 
 app.get("/community/lcr", (req, res) => {
     res.render("literary_council", {
-        societies: tech_council
+        societies: literary_council
     })
 })
 
 app.get("/community/ccr", (req, res) => {
     res.render("cultural_council", {
-        societies: tech_council
+        societies: cultural_council
     })
 })
 

@@ -165,7 +165,9 @@ a.navbar-brand{
     -moz-transition: all 0.6s ease-in-out 0s;
     transition: all 0.6s ease-in-out 0s;
   }
-  
+  p.content-text{
+      font-size: 1rem;
+  }
   .content:hover .content-overlay{
     opacity: 1;
   }

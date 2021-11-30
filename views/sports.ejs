@@ -57,12 +57,17 @@
               <marquee align="middle" style="text-align:left;height: 40vmin;position: relative;" direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
                 <div class="events">
                   <ul>
-                    <li><a href="#sports">Cras justo odio</a></li>
-                    <li><a href="#sports">ac facilisis in</a></li>
+                    <% events.forEach(event => { %>
+                      <% if(event.type === 'sports'){ %>
+                        <li><a href="../events/<%=event._id%>"><%=event.name%></a></li>
+                      <% } %>
+                    <% }) %>
+                    
+                    <!-- <li><a href="#sports">ac facilisis in</a></li>
                     <li><a href="#sports">at eros</a></li>
                     <li><a href="#sports">Cras justo odio</a></li>
                     <li><a href="#sports">ac facilisis in</a></li>
-                    <li><a href="#sports">at eros</a></li>
+                    <li><a href="#sports">at eros</a></li> -->
                   </ul>
                 </div>
                 </marquee>
